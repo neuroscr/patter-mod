@@ -4,7 +4,7 @@
 // Involving authorization and session
 
 /*global define:true */
-define(['jquery', 'js/util', 'js/appnet-api', 'js/appnet-note'],
+define(['jquery', 'util', 'appnet-api', 'appnet-note'],
 function ($, util, api, note) {
   'use strict';
 

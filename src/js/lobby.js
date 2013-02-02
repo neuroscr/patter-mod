@@ -3,7 +3,7 @@
 // Overall task for managing a list of subscribed channels
 
 /*global require: true */
-require(['jquery', 'js/util', 'js/netclient', 'js/editRoomModal',
+require(['jquery', 'util', 'netclient', 'editRoomModal',
          'bootstrap'],
 function ($, util, appnet, editRoomModal) {
   'use strict';

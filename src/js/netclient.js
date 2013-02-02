@@ -5,7 +5,7 @@
 
 /*global define:true */
 
-define(['jquery', 'js/util', 'js/netclient-api', 'js/appnet', 'js/appnet-note', 'js/netserver'],
+define(['jquery', 'util', 'netclient-api', 'appnet', 'appnet-note', 'netserver'],
 function ($, util, netclientapi, appnet, note, netserver) {
   'use strict';
 
