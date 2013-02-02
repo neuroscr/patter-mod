@@ -6,7 +6,7 @@
 
 /*global define:true */
 // we get API through appnet
-define(['js/appnet'],
+define(['appnet'],
 function (appnet) {
   'use strict';
 
@@ -18,6 +18,12 @@ function (appnet) {
   document.addEventListener('init', function (e) {
     console.log('netserver::init');
     appnet.init(e.data.tokenCookie, e.data.urlCookie);
+
+    // let netclient-api update it's token
+    var evt = document.createEvent('Event');
+    evt.initEvent('ADN_API_init_response', true, true);
+    evt.data = appnet.api.accessToken;
+    document.dispatchEvent(evt);
   }, false);
 
 // Probably should be this object's responsibility to handle session
