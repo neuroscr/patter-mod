@@ -3,7 +3,7 @@
 // A pane showing a scrollable list of chats and posts
 
 /*global define:true */
-define(['jquery', 'js/util', 'js/appnet',
+define(['jquery', 'js/util', 'js/netclient',
         'text!template/post.html', 'text!template/postEmoji.html',
         'jquery-desknoty', 'jquery-easydate', 'jquery-titlealert'],
 function ($, util, appnet, postTemplate, emojiTemplate) {
@@ -113,7 +113,7 @@ function ($, util, appnet, postTemplate, emojiTemplate) {
 //                'background: ' + makeUserColor('@' + data.user.username) + ';');
     author.text(data.user.username);
     author.on('click', this.authorCallback);
-    
+
     $('.postBody', post).prepend(body);
 
     renderEmbedImage(data, post);

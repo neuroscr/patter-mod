@@ -4,7 +4,7 @@
 // room. This may also be used as a dialog for creating a new room.
 
 /*global define:true */
-define(['jquery', 'js/util', 'js/appnet', 'js/roomInfo',
+define(['jquery', 'js/util', 'js/netclient', 'js/roomInfo',
         'js/UserFields',
         'text!template/editRoomModal.html', 'bootstrap'],
 function ($, util, appnet, roomInfo, UserFields, editTemplate) {
@@ -71,14 +71,14 @@ function ($, util, appnet, roomInfo, UserFields, editTemplate) {
       roomType += 'PM Channel';
     }
     $('#edit-room-type').html(roomType);
-    
+
     // Modal subtitle
     var ownerText = '';
     if (editRoomChannel !== null) {
       ownerText = 'Owned by @' + editRoomChannel.owner.username;
     }
     $('#edit-room-owner').html(ownerText);
-    
+
     $('#edit-room-body').hide();
     if (editRoomChannel === null) {
       if (editRoomType === 'net.patter-app.room') {
@@ -96,7 +96,7 @@ function ($, util, appnet, roomInfo, UserFields, editTemplate) {
     } else {
       $('#edit-room-name').hide();
     }
-    
+
     $('#edit-room-text').val('');
     if (editRoomChannel === null && editRoomType === 'net.app.core.pm') {
       $('#edit-room-text').show();

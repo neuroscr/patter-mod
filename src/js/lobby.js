@@ -3,7 +3,7 @@
 // Overall task for managing a list of subscribed channels
 
 /*global require: true */
-require(['jquery', 'js/util', 'js/appnet', 'js/editRoomModal',
+require(['jquery', 'js/util', 'js/netclient', 'js/editRoomModal',
          'bootstrap'],
 function ($, util, appnet, editRoomModal) {
   'use strict';
@@ -221,17 +221,17 @@ function ($, util, appnet, editRoomModal) {
     }
     return result;
   }
-  
+
   function renderPmChannel(channel)
   {
     var row = $('<div/>');
     var members = findChannelMembers(channel);
-    
+
     row.addClass('row-fluid');
-    
+
     row.append($('<div class="span5 offset1"/>').append(renderMembers(members)));
     row.append($('<div class="span6"/>').append(renderThumbs(members)));
-    
+
     var result = $('<a class="btn btn-large btn-block" href="room.html?channel=' + channel.id + '">');
     if (channel.has_unread) {
       result.addClass('btn-success');
@@ -245,9 +245,9 @@ function ($, util, appnet, editRoomModal) {
     var row = $('<div/>');
     var members = findChannelMembers(channel);
     var settings = appnet.note.findPatterSettings(channel);
-    
+
     row.addClass('row-fluid');
-    
+
     row.append($('<div class="span5"/>').append(renderChannelName(channel)));
     if (settings.blurb)
     {
@@ -258,7 +258,7 @@ function ($, util, appnet, editRoomModal) {
       row.append($('<div class="span5"/>').append(renderThumbs(members)));
     }
     row.append($('<div class="span2"/>').append(appnet.renderStatus(channel)));
-    
+
     var result = $('<a class="btn btn-large btn-block" href="room.html?channel=' + channel.id + '">');
     if (channel.has_unread) {
       result.addClass('btn-success');
@@ -266,7 +266,7 @@ function ($, util, appnet, editRoomModal) {
     result.append(row);
     return result;
   }
-  
+
   function renderChannelName(channel)
   {
     return $('<h4>' + util.htmlEncode(appnet.note.findPatterName(channel)) + '</h4>');
@@ -334,7 +334,7 @@ function ($, util, appnet, editRoomModal) {
     });
     $('#logout-button').on('click', logout);
   }
-  
+
   function logout(event)
   {
     event.preventDefault();

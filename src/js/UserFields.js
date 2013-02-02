@@ -3,7 +3,7 @@
 // Expandable list of input fields which are validated against app.net
 
 /*global define:true */
-define(['jquery', 'js/util', 'js/appnet'],
+define(['jquery', 'js/util', 'js/netclient'],
 function ($, util, appnet) {
   'use strict';
   function UserFields(prefix)

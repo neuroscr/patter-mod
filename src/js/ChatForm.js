@@ -3,7 +3,7 @@
 // A form used for submitting messages to a Patter chat room.
 
 /*global define:true */
-define(['jquery', 'js/appnet',
+define(['jquery', 'js/netclient',
         'text!template/ChatForm.html',
         'jquery-caret'],
 function ($, appnet, chatTemplate) {
