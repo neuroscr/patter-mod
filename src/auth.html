@@ -36,7 +36,7 @@ function getHashParams() {
         // We have just authorized, redirect to previous URL
         var prevUrl = $.cookie("patterPrevUrl");
         if (prevUrl == null) {
-          prevUrl = "http://patter-app.net";
+          prevUrl = window.location.href;
         }
         localStorage['patter2Token'] = accessToken;
         $.removeCookie("patterPrevUrl", '/');
