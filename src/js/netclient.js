@@ -49,7 +49,7 @@ function ($, util, netclientapi, appnet, note, netserver) {
     }
   }, false);
 
-  netclient.getUser = function (userId, args, success, failure)
+  netclient.updateUser = function (userId, args, success, failure)
   {
     netclient.api.getUser('me', '', success, failure);
   };
