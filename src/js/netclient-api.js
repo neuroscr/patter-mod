@@ -27,6 +27,7 @@ function ($) {
     netclientapi.accessToken = e.data;
   }, false);
 
+  // @ryantharp: not a fan of all this copypasta
   function makeUrl(pieces)
   {
     var result = '';
@@ -173,6 +174,7 @@ function ($) {
   addData('updateMarker', 'POST',
           'https://alpha-api.app.net/stream/0/posts/marker');
 
+  // @ryantharp - end copypasta
   netclientapi.authorize = function ()
   {
     console.log('netclientapi::authorize');

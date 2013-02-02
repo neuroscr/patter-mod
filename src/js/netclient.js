@@ -35,7 +35,7 @@ function ($, util, netclientapi, appnet, note, netserver) {
     console.log('netclient::ADN_API_call_response', e.data.result);
     //appnet.updateUser(e.data.success, e.data.failure);
     if (e.data.url === 'https://alpha-api.app.net/stream/0/users/me' && e.data.type === 'GET') {
-      //console.log('getUser response!',e.data.response);
+      //console.log('getUser response!', e.data.response);
       this.user = e.data.response.data;
     }
     if (e.data.result) {
@@ -49,9 +49,9 @@ function ($, util, netclientapi, appnet, note, netserver) {
     }
   }, false);
 
-  netclient.updateUser = function (userId, args, success, failure)
+  netclient.updateUser = function (success, failure)
   {
-    netclient.api.getUser('me', '', success, failure);
+    netclient.api.getUser('me', { 'include_annotations': 1 }, success, failure);
   };
 
   // @ryantharp: Compat shims, could be refactored out of appnet into appnet-utils
