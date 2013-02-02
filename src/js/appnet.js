@@ -1,6 +1,7 @@
 // base.js
 //
 // Utility functions for dealing with app.net
+// Involving authorization and session
 
 /*global define:true */
 define(['jquery', 'js/util', 'js/appnet-api', 'js/appnet-note'],
@@ -38,6 +39,9 @@ function ($, util, api, note) {
     }
   };
 
+  // @ryantharp: we should deprecate this function in favor of automatically updating
+  //   when a user/me response comes in. This gives the call program access to the return values
+  //   and more control as well as possibly more frequent updates to the user object
   appnet.updateUser = function (success, failure)
   {
     var complete = {
