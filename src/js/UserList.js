@@ -3,8 +3,8 @@
 // A pane showing a scrollable list of recent users and members
 
 /*global define:true */
-define(['jquery', 'util', 'netclient',
-        'text!../template/user.html'],
+define(['jquery', 'js/util', 'js/netclient',
+        'text!template/user.html'],
 function ($, util, appnet, userTemplate) {
   'use strict';
 

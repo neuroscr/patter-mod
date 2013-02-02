@@ -3,7 +3,7 @@
 // Functions to create and process app.net annotations
 
 /*global define: true */
-define(['util'], function (util) {
+define(['js/util'], function (util) {
   'use strict';
 
   var note = {};

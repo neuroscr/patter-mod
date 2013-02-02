@@ -4,7 +4,7 @@
 // PatterEmbed to display them.
 
 /*global define:true */
-define(['jquery', 'util', 'netclient', 'PatterEmbed'],
+define(['jquery', 'js/util', 'js/netclient', 'js/PatterEmbed'],
 function ($, util, appnet, PatterEmbed) {
   'use strict';
 

@@ -3,8 +3,8 @@
 // A pane showing a scrollable list of chats and posts
 
 /*global define:true */
-define(['jquery', 'util', 'netclient',
-        'text!../template/post.html', 'text!../template/postEmoji.html',
+define(['jquery', 'js/util', 'js/netclient',
+        'text!template/post.html', 'text!template/postEmoji.html',
         'jquery-desknoty', 'jquery-easydate', 'jquery-titlealert'],
 function ($, util, appnet, postTemplate, emojiTemplate) {
   'use strict';

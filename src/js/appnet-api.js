@@ -3,7 +3,7 @@
 // API calls on the app.net web service
 
 /*global define: true */
-define(['jquery', 'util', 'jquery-cookie'],
+define(['jquery', 'js/util', 'jquery-cookie'],
 function ($, util) {
   'use strict';
 
@@ -82,7 +82,7 @@ function ($, util) {
     }
     return result;
   }
-
+    
   function makeData(data)
   {
     var result = null;
@@ -92,7 +92,7 @@ function ($, util) {
     }
     return result;
   }
-
+  
   function makeUrl(pieces)
   {
     var result = '';
@@ -121,7 +121,7 @@ function ($, util) {
       this.call(url, type, args, success, failure);
     };
   }
-
+    
   function addTwo(name, type, prefix, middle, suffix)
   {
     appnet[name] = function (first, second, args, success, failure) {
@@ -244,7 +244,7 @@ function ($, util) {
     $.cookie(urlCookie, window.location, { expires: 1, path: '/' });
     util.redirect('auth.html');
   };
-
+  
   appnet.call = function (url, type, args, success, failure, data)
   {
     var complete = {
@@ -267,6 +267,6 @@ function ($, util) {
     header.done($.proxy(callSuccess, complete));
     header.fail($.proxy(callFailure, complete));
   };
-
+  
   return appnet;
 });

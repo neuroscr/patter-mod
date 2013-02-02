@@ -3,7 +3,7 @@
 // Information about the current room the user is chatting in.
 
 /*global define:true */
-define(['jquery', 'util', 'netclient'], function ($, util, appnet) {
+define(['jquery', 'js/util', 'js/netclient'], function ($, util, appnet) {
   'use strict';
 
   var roomInfo = {
